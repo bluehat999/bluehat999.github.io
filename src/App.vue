@@ -1,43 +1,24 @@
 <template>
-   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/foo">foo</router-link> |
-      <router-link to="/bar">bar</router-link> |
-    </div>
+  <div id="app">
     <c-bg :showChange="true"></c-bg>
-    <!-- <c-intro></c-intro> -->
-    <c-catalog></c-catalog>
-    <router-view ></router-view>
+    <router-view />
   </div>
 </template>
-
 <script>
-import cBg from 'components/c-bg'
-import cIntro from 'components/c-intro'
-import cCatalog from 'components/c-catalog'
+import cBg from 'components/c-bg/index.vue'
+import Vue from 'vue'
+Vue.use(cBg)
 export default {
-  name: 'app',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  },
-  mounted(){
-    console.warn("vue mouted",this.$router)
-  },
-  components:{
-    cBg,
-    cIntro,
-    cCatalog
+  components: {
+    cBg
   }
 }
 </script>
-
 <style lang="scss">
+@import './assets/font/iconfont.css';
 // @import url();
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -45,7 +26,8 @@ export default {
   margin-top: 60px;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 

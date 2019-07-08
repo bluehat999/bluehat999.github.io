@@ -1,30 +1,32 @@
 <template>
-  <div class="page">
-    <c-bg>
-    </c-bg>
-    home,??????
+  <div class='page'>
+    <cIntro></cIntro>
+    <cCatalog v-if="pullDown"></cCatalog>
   </div>
 </template>
 
-<script type="text/ecmascript-6">
-import cBg from 'components/c-bg'
-export default {
-  data() {
-    return {
+<script type='text/ecmascript-6'>
+import cIntro from 'components/c-intro/index'
+import cCatalog from 'components/c-catalog/index'
 
+export default {
+  data () {
+    return {
+      pullDown:false
     }
   },
-  props:{
-   name:String
+  props: {
+    name: String
   },
   components: {
-    cBg
+    cIntro,
+    cCatalog
   },
-  mounted(){
-    console.warn("home mouted")
+  mounted () {
+    console.warn('home mouted')
   }
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped lang='scss'>
 </style>
